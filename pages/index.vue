@@ -208,7 +208,7 @@
         </div>
 
         <div class="px-10">
-          <form name="rsvp-form" action="/" netlify>
+          <form name="rsvp-form" action="/thank-you" netlify>
             <div class="form-row">
               <label class="block mb-6 md:mb-0" for="rsvp-first-name">
                 <span class="label-text">First Name</span>
