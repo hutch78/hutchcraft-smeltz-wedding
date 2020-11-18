@@ -374,6 +374,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700;900&display=swap');
+
 * {
   -webkit-font-smoothing: antialiased;
 }
