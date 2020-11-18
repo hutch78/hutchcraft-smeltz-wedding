@@ -192,18 +192,23 @@
         </h2>
 
         <div class="red-band">
-          <div class="red-band__inner bg-primary p-10 rounded-xl my-10 lg:my-20">
+          <div
+            class="red-band__inner bg-primary p-10 rounded-xl my-10 lg:my-20"
+          >
             <p class="text-white text-lg">
               “We know this is really short notice, and close to the holidays.
               We would be blessed to have you join us, but understand that COVID
               and the short notice make this a tough ask! Please let us know
-              either way so that we can plan accordingly.“<span class="lg:block lg:text-right lg:mt-6">- Allison and Jeremy</span>
+              either way so that we can plan accordingly.“<span
+                class="lg:block lg:text-right lg:mt-6"
+                >- Allison and Jeremy</span
+              >
             </p>
           </div>
         </div>
 
         <div class="px-10">
-          <form action="/" netlify>
+          <form name="rsvp-form" action="/" netlify>
             <div class="form-row">
               <label class="block mb-6 md:mb-0" for="rsvp-first-name">
                 <span class="label-text">First Name</span>
@@ -227,7 +232,9 @@
               </label>
             </div>
 
-            <div class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl">
+            <div
+              class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl"
+            >
               <p class="label-text mb-0">Will you be attending?</p>
               <div class="flex mb-6 lg:mb-0">
                 <label for="rsvp-yes" class="inline-block mr-8">
@@ -241,82 +248,80 @@
                   <span class="inline-block ml-2">Yes</span>
                 </label>
                 <label for="rsvp-no" class="inline-block">
-                  <input 
-                    type="radio" 
-                    id="rsvp-no" 
-                    name="rsvp" 
+                  <input
+                    type="radio"
+                    id="rsvp-no"
+                    name="rsvp"
                     v-model="form.rsvp"
-                    value="no" 
+                    value="no"
                   />
                   <span class="inline-block ml-2">No</span>
                 </label>
               </div>
             </div>
-            
-            <template v-if="form.rsvp == 'yes'">
 
+            <template v-if="form.rsvp == 'yes'">
               <div class="form-row">
-              <label class="block mb-6 md:mb-0" for="rsvp-email">
-                <span class="label-text">Email</span>
-                <input
-                  type="email"
-                  id="rsvp-email"
-                  name="email"
-                  v-model="form.email"
-                  class="form-control"
-                />
-              </label>
-              <label class="block mb-6 md:mb-0" for="rsvp-phone">
-                <span class="label-text">Phone</span>
-                <input
-                  type="text"
-                  id="rsvp-phone"
-                  name="phone"
-                  v-model="form.phone"
-                  class="form-control"
-                />
-              </label>
-            </div>
-            <div class="form-row">
-              <label class="block mb-6 md:mb-0" for="rsvp-guests">
-                <span class="label-text">Number of guests</span>
-                <input
-                  type="number"
-                  max="4"
-                  name="num_guests"
-                  id="rsvp-guests"
-                  v-model="form.numGuests"
-                  class="form-control"
-                />
-              </label>
-              <label class="block mb-6 md:mb-0" for="rsvp-what-ages">
-                <span class="label-text">What ages are your kids?</span>
-                <input
-                  type="text"
-                  id="rsvp-what-ages"
-                  name="ages_kids"
-                  v-model="form.agesKids"
-                  class="form-control"
-                />
-              </label>
-            </div>
-            <div class="form-row form-row--single-col">
-              <label class="block mb-6 md:mb-0" for="rsvp-diet">
-                <span class="label-text"
-                  >Do you have any dietary restrictions?</span
-                >
-                <input
-                  type="text"
-                  id="rsvp-diet"
-                  name="dietary_restrictions"
-                  v-model="form.dietaryRestrictions"
-                  class="form-control"
-                />
-              </label>
-            </div>
-              
+                <label class="block mb-6 md:mb-0" for="rsvp-email">
+                  <span class="label-text">Email</span>
+                  <input
+                    type="email"
+                    id="rsvp-email"
+                    name="email"
+                    v-model="form.email"
+                    class="form-control"
+                  />
+                </label>
+                <label class="block mb-6 md:mb-0" for="rsvp-phone">
+                  <span class="label-text">Phone</span>
+                  <input
+                    type="text"
+                    id="rsvp-phone"
+                    name="phone"
+                    v-model="form.phone"
+                    class="form-control"
+                  />
+                </label>
+              </div>
+              <div class="form-row">
+                <label class="block mb-6 md:mb-0" for="rsvp-guests">
+                  <span class="label-text">Number of guests</span>
+                  <input
+                    type="number"
+                    max="4"
+                    name="num_guests"
+                    id="rsvp-guests"
+                    v-model="form.numGuests"
+                    class="form-control"
+                  />
+                </label>
+                <label class="block mb-6 md:mb-0" for="rsvp-what-ages">
+                  <span class="label-text">What ages are your kids?</span>
+                  <input
+                    type="text"
+                    id="rsvp-what-ages"
+                    name="ages_kids"
+                    v-model="form.agesKids"
+                    class="form-control"
+                  />
+                </label>
+              </div>
+              <div class="form-row form-row--single-col">
+                <label class="block mb-6 md:mb-0" for="rsvp-diet">
+                  <span class="label-text"
+                    >Do you have any dietary restrictions?</span
+                  >
+                  <input
+                    type="text"
+                    id="rsvp-diet"
+                    name="dietary_restrictions"
+                    v-model="form.dietaryRestrictions"
+                    class="form-control"
+                  />
+                </label>
+              </div>
             </template>
-            
+
             <div class="form-row form-row--single-col">
               <label class="block mb-6 md:mb-0" for="rsvp-message">
                 <span class="label-text"
@@ -355,7 +360,7 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
       form: {
         firstName: '',
@@ -367,15 +372,13 @@ export default {
         agesKids: '',
         dietaryRestrictions: '',
         message: '',
-      }
+      },
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss">
-
-
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700;900&display=swap');
 
 * {
