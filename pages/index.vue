@@ -1,58 +1,9 @@
 <template>
   <main class="page-wrapper">
+    
     <section
       class="hero-section py-10 px-4 text-center md:h-screen flex flex-col justify-center"
     >
-      <img
-        class="snowflake snowflake-1 w-2 lg:w-6"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-2 w-4 lg:w-4"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-3 w-2 lg:w-8"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-4 w-4 lg:w-2"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-5 w-2 lg:w-10"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-6 w-4 lg:w-4"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-7 w-2 lg:w-2"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-8 w-4 lg:w-6"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-9 w-2 lg:w-4"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
-      <img
-        class="snowflake snowflake-10 w-4 lg:w-4"
-        src="/img/snowflake.svg"
-        alt="snowflake icon"
-      />
 
       <img
         src="/img/xmas-tree-left.png"
@@ -69,7 +20,7 @@
           >Allison Smeltz and <br class="block lg:hidden" />Jeremy
           Hutchcraft</small
         >
-        <span class="uppercase text-6xl">are Getting Married!</span>
+        <span class="uppercase text-5xl lg:text-6xl">are Getting Married!</span>
       </h1>
       <p class="lg:text-3xl lg:max-w-4xl lg:mx-auto  relative z-10">
         in a <span class="text-primary font-bold">Christmas</span>-<span
@@ -83,7 +34,7 @@
     <section class="about-section py-10 px-5">
       <div class="container">
         <img
-          class="block mb-10 lg:mb-40 lg:mx-auto lg:-mt-40"
+          class="block mb-10 lg:mb-40 lg:mx-auto lg:-mt-40 relative z-10"
           src="/img/al-and-jer.png"
           alt="Allison and Jeremy"
         />
@@ -232,8 +183,7 @@
     </section>
 
     <section class="rsvp-section">
-      <div class="container">
-        <h2
+      <h2
           class="text-6xl font-black leading-tight tracking-tighter text-center"
         >
           PLEASE RSVP
@@ -402,7 +352,6 @@
             </form>
           </client-only>
         </div>
-      </div>
     </section>
 
     <section class="thank-you px-5 py-20 text-center">
@@ -411,6 +360,59 @@
       </h2>
       <p class="text-xl">-Allison and Jeremy</p>
     </section>
+
+
+    <img
+        class="snowflake snowflake-1 w-2 lg:w-6"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-2 w-4 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-3 w-2 lg:w-8"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-4 w-4 lg:w-2"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-5 w-2 lg:w-10"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-6 w-4 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-7 w-2 lg:w-2"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-8 w-4 lg:w-6"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-9 w-2 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-10 w-4 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+    
   </main>
 </template>
 
@@ -467,6 +469,10 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 
+.page-wrapper {
+  overflow: hidden;
+}
+
 .h2-style {
   @apply text-2xl font-medium leading-tight;
   @media (min-width: theme('screens.lg')) {
@@ -492,15 +498,15 @@ p {
 }
 
 @-webkit-keyframes snowflake{
-    0%   { opacity: 1; transform: translate3d(0, 10vh, 0) rotate(0deg); }
-    12%  { opacity: 0; }
-    25%  { opacity: 1; transform: translate3d(0, 25vh, 0) rotate(180deg); }
-    37%  { opacity: 0; }
-    50%  { opacity: 1; transform: translate3d(0, 50vh, 0) rotate(360deg); }
-    62%  { opacity: 0; }
-    75%  { opacity: 1; transform: translate3d(0, 75vh, 0) rotate(180def); }
-    87%  { opacity: 0; }
-    100% { opacity: 1; transform: translate3d(0, 100vh, 0) rotate(0deg); }
+    0%   { opacity: 0; transform: translate3d(0, 10vh, 0) rotate(0deg); }
+    12%  { opacity: 1; }
+    25%  { opacity: 0; transform: translate3d(0, 25vh, 0) rotate(180deg); }
+    37%  { opacity: 1; }
+    50%  { opacity: 0; transform: translate3d(0, 50vh, 0) rotate(360deg); }
+    62%  { opacity: 1; }
+    75%  { opacity: 0; transform: translate3d(0, 75vh, 0) rotate(180def); }
+    87%  { opacity: 1; }
+    100% { opacity: 0; transform: translate3d(0, 100vh, 0) rotate(0deg); }
 }
 
 .dont-break-out {
@@ -569,11 +575,21 @@ body {
 }
 
 .left-tree {
-  left: 3vw;
+  @media (min-width: theme('screens.lg')) {
+    left: -140px;
+  }
+  @media (min-width: theme('screens.xl')) {
+    left: 3vw;
+  }
 }
 
 .right-tree {
-  right: 3vw;
+  @media (min-width: theme('screens.lg')) {
+    right: -140px;
+  }
+  @media (min-width: theme('screens.xl')) {
+    right: 3vw;
+  }
 }
 
 .form-control {
@@ -602,6 +618,7 @@ body {
 }
 
 .snowflake {
+  opacity: 0;
   position: fixed;
   pointer-events: none;
   display: block;
@@ -615,55 +632,64 @@ body {
 .snowflake-1 {
   top: 25%;
   left: 7.5%;
-  animation-delay:1s;
+  animation-delay:1.23s;
+  animation-duration: 7s;
 }
 
 .snowflake-2 {
   top: 10%;
   left: 7rem;
   animation-delay:.5s;
+  animation-duration: 8s;
 }
 
 .snowflake-3 {
   top: 25%;
   right: 5rem;
-  animation-delay:2s;
+  animation-delay:2.3s;
+  animation-duration: 8.5s;
 }
 
 .snowflake-4 {
   top: 5rem;
   right: 3rem;
   animation-delay:.5s;
+  animation-duration: 10.5s;
 }
 
 .snowflake-5 {
   top: 5rem;
   right: 50%;
   animation-delay:1.5s;
+  animation-duration: 9.5s;
 }
 
 .snowflake-6 {
   top: 10%;
   right: 4rem;
   animation-delay:.1s;
+  animation-duration: 5s;
 }
 
 .snowflake-7 {
   top: 12rem;
   left: 23%;
-  animation-delay:2s;
+  animation-delay:2.256s;
+  animation-duration: 6.5s;
 }
 
 .snowflake-8 {
   top: 8rem;
   right: 30%;
   animation-delay:.8s;
+  animation-duration: 9s;
 }
 
 .snowflake-9 {
   top: 35%;
   left: 30%;
-  animation-delay:1s;
+  animation-delay:.875s;
+  animation-duration: 7.5s;
 }
 
 .snowflake-10 {
