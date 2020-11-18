@@ -201,7 +201,7 @@
         </div>
 
         <div class="px-10">
-          <form action="/">
+          <form action="/" netlify>
             <p class="label-text mb-2">Will you be attending?</p>
             <div class="flex mb-6">
               <label for="rsvp-yes" class="inline-block mr-8">
