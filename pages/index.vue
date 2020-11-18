@@ -215,7 +215,7 @@
               <input type="hidden" name="form-name" value="rsvpForm" />
               <div class="form-row">
                 <label class="block mb-6 md:mb-0" for="rsvp-first-name">
-                  <span class="label-text">First Name</span>
+                  <span class="label-text" :class="{ 'text-salmon-800': $v.form.firstName.$dirty && $v.form.firstName.$error }">First Name</span>
                   <input
                     type="text"
                     id="rsvp-first-name"
@@ -223,25 +223,38 @@
                     v-model="form.firstName"
                     @blur="$v.form.firstName.$touch()"
                     class="form-control"
+                    :class="{
+                      'er': $v.form.firstName.$dirty && $v.form.firstName.$error
+                    }"
                   />
+                  <small class="bg-salmon-500 text-white mt-2 py-3 px-4 text-base rounded-md" :class="$v.form.firstName.$dirty && $v.form.firstName.$error ? 'block' : 'hidden'">
+                    Please enter your First Name so we know who you are
+                  </small>
                 </label>
                 <label class="block mb-6 md:mb-0" for="rsvp-last-name">
-                  <span class="label-text">Last Name</span>
+                  <span class="label-text" :class="{ 'text-salmon-800': $v.form.lastName.$dirty && $v.form.lastName.$error }">Last Name</span>
                   <input
                     type="text"
                     id="rsvp-last-name"
                     name="last_name"
                     v-model="form.lastName"
                     class="form-control"
+                    @blur="$v.form.lastName.$touch()"
+                    :class="{
+                      'er': $v.form.lastName.$dirty && $v.form.lastName.$error
+                    }"
                   />
+                  <small class="bg-salmon-500 text-white mt-2 py-3 px-4 text-base rounded-md" :class="$v.form.lastName.$dirty && $v.form.lastName.$error ? 'block' : 'hidden'">
+                    Please enter your Last Name so we know who you are
+                  </small>
                 </label>
               </div>
 
               <div
-                class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl"
+                class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl  mb-6 lg:mb-0"
               >
                 <p class="label-text mb-0">Will you be attending?</p>
-                <div class="flex mb-6 lg:mb-0">
+                <div class="flex">
                   <label for="rsvp-yes" class="inline-block mr-8">
                     <input
                       type="radio"
@@ -346,6 +359,8 @@
               <button
                 class="block bg-salmon text-center text-white font-bold text-xl uppercase w-full py-10 rounded-xl"
                 type="submit"
+                :class="{ 'disabled': $v.form.$anyError }"
+                :disabled="$v.form.$anyError"
               >
                 Submit RSVP
               </button>
@@ -467,6 +482,10 @@ export default {
 <style lang="scss">
 * {
   -webkit-font-smoothing: antialiased;
+}
+
+button.disabled {
+  @apply bg-gray-400 text-gray-800;
 }
 
 .page-wrapper {
@@ -594,6 +613,9 @@ body {
 
 .form-control {
   @apply border border-secondary-100 p-4 text-secondary w-full rounded;
+  &.er {
+    @apply border-salmon-500 text-salmon-800;
+  }
 }
 
 .label-text {
