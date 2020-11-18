@@ -297,14 +297,14 @@ export default {}
 
 .h2-style {
   @apply text-2xl font-medium leading-tight;
-  @media screen and (min-width: 992px) {
+  @media (min-width: theme('screens.lg')) {
     @apply text-4xl;
   }
 }
 
 .h3-style {
   @apply text-lg;
-  @media screen and (min-width: 992px){
+  @media (min-width: theme('screens.lg')) {
     @apply text-xl;;
   }
 }
@@ -313,7 +313,7 @@ p {
   @apply leading-loose;
   & + p {
     @apply mt-5;
-    @media screen and (min-width: 992px) {
+    @media (min-width: theme('screens.lg')) {
       @apply mt-10;
     }
   }
@@ -396,14 +396,14 @@ body {
 
 .label-text {
   @apply text-base block mb-2;
-  @media screen and (min-width: 992px) {
+  @media (min-width: theme('screens.lg')) {
     @apply text-lg;
   }
 }
 
 .form-row {
   @apply grid-cols-2 gap-8;
-  @media screen and (min-width: 500px) {
+  @media (min-width: theme('screens.sm')) {
     @apply grid mb-6;
   }
   &--single-col {
@@ -413,7 +413,7 @@ body {
 
 .about-section {
   background-color: #f5f2f3;
-  @media screen and (min-width: 992px) {
+  @media (min-width: theme('screens.lg')) {
     @apply pb-40;
   }
 }
@@ -422,7 +422,7 @@ body {
 .details-section {
   > .container {
     @apply max-w-xl mx-auto;
-    @media screen and (min-width: 992px) {
+    @media (min-width: theme('screens.lg')) {
       @apply max-w-3xl;
     }
   }
@@ -430,7 +430,7 @@ body {
 
 .details-section {
   > .container {
-    @media screen and (min-width: 992px){
+    @media (min-width: theme('screens.lg')) {
       @apply max-w-5xl;
     }
   }
@@ -444,7 +444,7 @@ body {
 
 .details-row {
   @apply border-t-2 border-gray-200 py-4;
-  @media screen and (min-width: 992px){
+  @media (min-width: theme('screens.lg')) {
     @apply py-8;
   }
 }
