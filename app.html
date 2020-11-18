@@ -4,7 +4,7 @@
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
-    <form netlify method="post" action="thank-you" name="rsvpForm">
+    <form netlify method="post" class="hidden" action="thank-you" name="rsvpForm" hidden>
       <input type="hidden" name="form-name" value="rsvpForm" />
       <input type="text" name="first_name" />
       <input type="text" name="last_name" />
