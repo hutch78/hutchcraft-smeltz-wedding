@@ -1,8 +1,59 @@
 <template>
   <main class="page-wrapper">
     <section
-      class="hero-section py-10 px-4 text-center h-screen flex flex-col justify-center"
+      class="hero-section py-10 px-4 text-center md:h-screen flex flex-col justify-center"
     >
+      <img
+        class="snowflake snowflake-1 w-2 lg:w-6"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-2 w-4 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-3 w-2 lg:w-8"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-4 w-4 lg:w-2"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-5 w-2 lg:w-10"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-6 w-4 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-7 w-2 lg:w-2"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-8 w-4 lg:w-6"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-9 w-2 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+      <img
+        class="snowflake snowflake-10 w-4 lg:w-4"
+        src="/img/snowflake.svg"
+        alt="snowflake icon"
+      />
+
       <img
         src="/img/xmas-tree-left.png"
         alt=""
@@ -428,6 +479,18 @@ p {
   }
 }
 
+@-webkit-keyframes snowflake{
+    0%   { opacity: 1; transform: translate3d(0, 10vh, 0) rotate(0deg); }
+    12%  { opacity: 0; }
+    25%  { opacity: 1; transform: translate3d(0, 25vh, 0) rotate(180deg); }
+    37%  { opacity: 0; }
+    50%  { opacity: 1; transform: translate3d(0, 50vh, 0) rotate(360deg); }
+    62%  { opacity: 0; }
+    75%  { opacity: 1; transform: translate3d(0, 75vh, 0) rotate(180def); }
+    87%  { opacity: 0; }
+    100% { opacity: 1; transform: translate3d(0, 100vh, 0) rotate(0deg); }
+}
+
 .dont-break-out {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
@@ -520,6 +583,81 @@ body {
   &--single-col {
     @apply grid-cols-1 gap-0;
   }
+}
+
+.hero-section {
+  position: relative;
+}
+
+.snowflake {
+  position: fixed;
+  pointer-events: none;
+  display: block;
+  z-index: 5;
+  animation: snowflake 10s 1;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite; 
+
+}
+
+.snowflake-1 {
+  top: 25%;
+  left: 7.5%;
+  animation-delay:1s;
+}
+
+.snowflake-2 {
+  top: 10%;
+  left: 7rem;
+  animation-delay:.5s;
+}
+
+.snowflake-3 {
+  top: 25%;
+  right: 5rem;
+  animation-delay:2s;
+}
+
+.snowflake-4 {
+  top: 5rem;
+  right: 3rem;
+  animation-delay:.5s;
+}
+
+.snowflake-5 {
+  top: 5rem;
+  right: 50%;
+  animation-delay:1.5s;
+}
+
+.snowflake-6 {
+  top: 10%;
+  right: 4rem;
+  animation-delay:.1s;
+}
+
+.snowflake-7 {
+  top: 12rem;
+  left: 23%;
+  animation-delay:2s;
+}
+
+.snowflake-8 {
+  top: 8rem;
+  right: 30%;
+  animation-delay:.8s;
+}
+
+.snowflake-9 {
+  top: 35%;
+  left: 30%;
+  animation-delay:1s;
+}
+
+.snowflake-10 {
+  top: 4rem;
+  left: 30%;
+  animation-delay:.3s;
 }
 
 .about-section {
