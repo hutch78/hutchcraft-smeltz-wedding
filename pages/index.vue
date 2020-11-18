@@ -210,6 +210,7 @@
         <div class="px-10">
           <client-only>
             <form name="rsvp-form" action="/thank-you" netlify>
+            <input type="hidden" name="form-name" value="rsvp-form" />
             <div class="form-row">
               <label class="block mb-6 md:mb-0" for="rsvp-first-name">
                 <span class="label-text">First Name</span>
