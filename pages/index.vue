@@ -451,7 +451,7 @@ export default {
       form: {
         firstName: '',
         lastName: '',
-        rsvp: 'no',
+        rsvp: 'yes',
         email: '',
         phone: '',
         numGuests: '',
