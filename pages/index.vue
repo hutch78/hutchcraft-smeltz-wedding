@@ -195,12 +195,12 @@
           <div
             class="red-band__inner bg-primary p-10 rounded-xl my-10 lg:my-20"
           >
-            <p class="text-white text-lg">
+            <p class="text-white text-lg font-bold">
               “We know this is really short notice, and close to the holidays.
               We would be blessed to have you join us, but understand that COVID
               and the short notice make this a tough ask! Please let us know
               either way so that we can plan accordingly.“<span
-                class="lg:block lg:text-right lg:mt-6"
+                class="lg:block lg:text-right lg:mt-6 font-normal italic"
                 >- Allison and Jeremy</span
               >
             </p>
@@ -208,7 +208,8 @@
         </div>
 
         <div class="px-10">
-          <form name="rsvp-form" action="/thank-you" netlify>
+          <client-only>
+            <form name="rsvp-form" action="/thank-you" netlify>
             <div class="form-row">
               <label class="block mb-6 md:mb-0" for="rsvp-first-name">
                 <span class="label-text">First Name</span>
@@ -345,6 +346,7 @@
               Submit RSVP
             </button>
           </form>
+          </client-only>
         </div>
       </div>
     </section>
@@ -379,7 +381,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700;900&display=swap');
 
 * {
   -webkit-font-smoothing: antialiased;

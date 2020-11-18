@@ -36,6 +36,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/google-fonts-module
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -63,6 +66,19 @@ export default {
    */
   tailwindcss: {
     exposeConfig: true
+  },
+
+  googleFonts: {
+    families: {
+      Spartan: [400, 700, 900]
+    },
+    display: 'swap',
+    prefetch: true
+  },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
   }
+
   
 }
