@@ -64,14 +64,14 @@
         alt=""
         class="right-tree hidden lg:block"
       />
-      <h1 class="font-sans text-6xl font-black text-primary leading-tight mb-5">
+      <h1 class="font-sans text-6xl font-black text-primary leading-tight mb-5 relative z-10">
         <small class="text-3xl md:text-3xl block text-gray-800 mb-5 font-normal"
           >Allison Smeltz and <br class="block lg:hidden" />Jeremy
           Hutchcraft</small
         >
         <span class="uppercase text-6xl">are Getting Married!</span>
       </h1>
-      <p class="lg:text-3xl lg:max-w-4xl lg:mx-auto">
+      <p class="lg:text-3xl lg:max-w-4xl lg:mx-auto  relative z-10">
         in a <span class="text-primary font-bold">Christmas</span>-<span
           class="text-secondary font-bold"
           >themed</span
@@ -160,7 +160,7 @@
                       1-352-854-1400
                     </address>
                   </div>
-                  <a href="#" class="block font-bold text-gray-800">
+                  <a href="https://www.google.com/maps/dir//Hilton+Ocala,+3600+SW+36th+Ave,+Ocala,+FL+34474/@29.1487342,-82.1853908,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x88e7d50f3302d53d:0xcf98371245bfe41!2m2!1d-82.1832021!2d29.1487342" class="block font-bold text-gray-800" target="_blank" title="Get directions to the Hilton hotel in Ocala, FL">
                     Get Directions
                     <i class="fas fa-chevron-right inline-block ml-3"></i>
                   </a>
@@ -214,17 +214,17 @@
           </div>
 
           <div class="images-col flex-shrink-0 lg:w-1/2 lg:-mt-32">
-            <img src="/img/wedding.png" alt="" class="block mx-auto" />
-            <p class="text-center py-3 mb-4">
-              (this is definitely our actual wedding, not a stock photo 😂)
+            <img src="/img/wedding2.png" alt="Outdoor wedding venue" class="block mx-auto" />
+            <p class="text-center py-3 mb-4 text-xs">
+              Outdoor area where the ceremony will be held at Hilton Ocala
             </p>
-            <img src="/img/wedding2.png" alt="" class="block mx-auto" />
-            <p class="text-center py-3 mb-4">
-              (like this, but with way less people and socially distanced)
+            <img src="/img/wedding.png" alt="Wedding reception in a ballroom" class="block mx-auto" />
+            <p class="text-center py-3 mb-4 text-xs">
+              Our reception will be held in the Saratoga Ballroom.
             </p>
-            <img src="/img/wedding3.png" alt="" class="block mx-auto" />
-            <p class="text-center py-3 mb-4">
-              (OK, this is an actual photo of a King Suite at the Hilton)
+            <img src="/img/wedding3.png" alt="King suite bedroom" class="block mx-auto" />
+            <p class="text-center py-3 mb-4 text-xs">
+              King Suite room at the Hilton
             </p>
           </div>
         </div>
@@ -271,6 +271,7 @@
                     id="rsvp-first-name"
                     name="first_name"
                     v-model="form.firstName"
+                    @blur="$v.form.firstName.$touch()"
                     class="form-control"
                   />
                 </label>
@@ -414,9 +415,20 @@
 </template>
 
 <script>
+import { validationMixin } from 'vuelidate';
+import { required, minLength } from 'vuelidate/lib/validators';
 import { handleSubmit } from '../assets/js/services/form'
 
 export default {
+  mixins: [validationMixin],
+
+  validations: {
+    form: {
+      firstName: { required },
+      lastName: { required }
+    }
+  },
+  
   data() {
     return {
       form: {
