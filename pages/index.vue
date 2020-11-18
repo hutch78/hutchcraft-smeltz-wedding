@@ -209,144 +209,145 @@
 
         <div class="px-10">
           <client-only>
-            <form name="rsvp-form" action="/thank-you" netlify>
-            <input type="hidden" name="form-name" value="rsvp-form" />
-            <div class="form-row">
-              <label class="block mb-6 md:mb-0" for="rsvp-first-name">
-                <span class="label-text">First Name</span>
-                <input
-                  type="text"
-                  id="rsvp-first-name"
-                  name="first_name"
-                  v-model="form.firstName"
-                  class="form-control"
-                />
-              </label>
-              <label class="block mb-6 md:mb-0" for="rsvp-last-name">
-                <span class="label-text">Last Name</span>
-                <input
-                  type="text"
-                  id="rsvp-last-name"
-                  name="last_name"
-                  v-model="form.lastName"
-                  class="form-control"
-                />
-              </label>
-            </div>
-
-            <div
-              class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl"
-            >
-              <p class="label-text mb-0">Will you be attending?</p>
-              <div class="flex mb-6 lg:mb-0">
-                <label for="rsvp-yes" class="inline-block mr-8">
-                  <input
-                    type="radio"
-                    id="rsvp-yes"
-                    name="rsvp"
-                    v-model="form.rsvp"
-                    value="yes"
-                  />
-                  <span class="inline-block ml-2">Yes</span>
-                </label>
-                <label for="rsvp-no" class="inline-block">
-                  <input
-                    type="radio"
-                    id="rsvp-no"
-                    name="rsvp"
-                    v-model="form.rsvp"
-                    value="no"
-                  />
-                  <span class="inline-block ml-2">No</span>
-                </label>
-              </div>
-            </div>
-
-            <template v-if="form.rsvp == 'yes'">
+            <!-- <form @submit.prevent="onSubmit" name="rsvpForm"> -->
+            <form netlify method="post" action="/thank-you" name="rsvpForm">
+              <input type="hidden" name="form-name" value="rsvpForm" />
               <div class="form-row">
-                <label class="block mb-6 md:mb-0" for="rsvp-email">
-                  <span class="label-text">Email</span>
-                  <input
-                    type="email"
-                    id="rsvp-email"
-                    name="email"
-                    v-model="form.email"
-                    class="form-control"
-                  />
-                </label>
-                <label class="block mb-6 md:mb-0" for="rsvp-phone">
-                  <span class="label-text">Phone</span>
+                <label class="block mb-6 md:mb-0" for="rsvp-first-name">
+                  <span class="label-text">First Name</span>
                   <input
                     type="text"
-                    id="rsvp-phone"
-                    name="phone"
-                    v-model="form.phone"
+                    id="rsvp-first-name"
+                    name="first_name"
+                    v-model="form.firstName"
                     class="form-control"
                   />
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="block mb-6 md:mb-0" for="rsvp-guests">
-                  <span class="label-text">Number of guests</span>
-                  <input
-                    type="number"
-                    max="4"
-                    name="num_guests"
-                    id="rsvp-guests"
-                    v-model="form.numGuests"
-                    class="form-control"
-                  />
-                </label>
-                <label class="block mb-6 md:mb-0" for="rsvp-what-ages">
-                  <span class="label-text">What ages are your kids?</span>
+                <label class="block mb-6 md:mb-0" for="rsvp-last-name">
+                  <span class="label-text">Last Name</span>
                   <input
                     type="text"
-                    id="rsvp-what-ages"
-                    name="ages_kids"
-                    v-model="form.agesKids"
+                    id="rsvp-last-name"
+                    name="last_name"
+                    v-model="form.lastName"
                     class="form-control"
                   />
                 </label>
               </div>
+
+              <div
+                class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl"
+              >
+                <p class="label-text mb-0">Will you be attending?</p>
+                <div class="flex mb-6 lg:mb-0">
+                  <label for="rsvp-yes" class="inline-block mr-8">
+                    <input
+                      type="radio"
+                      id="rsvp-yes"
+                      name="rsvp"
+                      v-model="form.rsvp"
+                      value="yes"
+                    />
+                    <span class="inline-block ml-2">Yes</span>
+                  </label>
+                  <label for="rsvp-no" class="inline-block">
+                    <input
+                      type="radio"
+                      id="rsvp-no"
+                      name="rsvp"
+                      v-model="form.rsvp"
+                      value="no"
+                    />
+                    <span class="inline-block ml-2">No</span>
+                  </label>
+                </div>
+              </div>
+
+              <template v-if="form.rsvp == 'yes'">
+                <div class="form-row">
+                  <label class="block mb-6 md:mb-0" for="rsvp-email">
+                    <span class="label-text">Email</span>
+                    <input
+                      type="email"
+                      id="rsvp-email"
+                      name="email"
+                      v-model="form.email"
+                      class="form-control"
+                    />
+                  </label>
+                  <label class="block mb-6 md:mb-0" for="rsvp-phone">
+                    <span class="label-text">Phone</span>
+                    <input
+                      type="text"
+                      id="rsvp-phone"
+                      name="phone"
+                      v-model="form.phone"
+                      class="form-control"
+                    />
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label class="block mb-6 md:mb-0" for="rsvp-guests">
+                    <span class="label-text">Number of guests</span>
+                    <input
+                      type="number"
+                      max="4"
+                      name="num_guests"
+                      id="rsvp-guests"
+                      v-model="form.numGuests"
+                      class="form-control"
+                    />
+                  </label>
+                  <label class="block mb-6 md:mb-0" for="rsvp-what-ages">
+                    <span class="label-text">What ages are your kids?</span>
+                    <input
+                      type="text"
+                      id="rsvp-what-ages"
+                      name="ages_kids"
+                      v-model="form.agesKids"
+                      class="form-control"
+                    />
+                  </label>
+                </div>
+                <div class="form-row form-row--single-col">
+                  <label class="block mb-6 md:mb-0" for="rsvp-diet">
+                    <span class="label-text"
+                      >Do you have any dietary restrictions?</span
+                    >
+                    <input
+                      type="text"
+                      id="rsvp-diet"
+                      name="dietary_restrictions"
+                      v-model="form.dietaryRestrictions"
+                      class="form-control"
+                    />
+                  </label>
+                </div>
+              </template>
+
               <div class="form-row form-row--single-col">
-                <label class="block mb-6 md:mb-0" for="rsvp-diet">
+                <label class="block mb-6 md:mb-0" for="rsvp-message">
                   <span class="label-text"
-                    >Do you have any dietary restrictions?</span
+                    >Share a message with Allison and Jeremy?</span
                   >
-                  <input
+                  <textarea
                     type="text"
-                    id="rsvp-diet"
-                    name="dietary_restrictions"
-                    v-model="form.dietaryRestrictions"
+                    id="rsvp-message"
                     class="form-control"
-                  />
+                    name="message"
+                    v-model="form.message"
+                    rows="4"
+                  ></textarea>
                 </label>
               </div>
-            </template>
 
-            <div class="form-row form-row--single-col">
-              <label class="block mb-6 md:mb-0" for="rsvp-message">
-                <span class="label-text"
-                  >Share a message with Allison and Jeremy?</span
-                >
-                <textarea
-                  type="text"
-                  id="rsvp-message"
-                  class="form-control"
-                  name="message"
-                  v-model="form.message"
-                  rows="4"
-                ></textarea>
-              </label>
-            </div>
-
-            <button
-              class="block bg-salmon text-center text-white font-bold text-xl uppercase w-full py-10 rounded-xl"
-              type="submit"
-            >
-              Submit RSVP
-            </button>
-          </form>
+              <button
+                class="block bg-salmon text-center text-white font-bold text-xl uppercase w-full py-10 rounded-xl"
+                type="submit"
+              >
+                Submit RSVP
+              </button>
+            </form>
           </client-only>
         </div>
       </div>
@@ -362,6 +363,8 @@
 </template>
 
 <script>
+import { handleSubmit } from '../assets/js/services/form'
+
 export default {
   data() {
     return {
@@ -378,11 +381,25 @@ export default {
       },
     }
   },
+
+  methods: {
+    onSubmit(event) {
+      console.log('')
+      console.log('on submit')
+      console.log('')
+      handleSubmit(event, this.form)
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.warn(err)
+        })
+    },
+  },
 }
 </script>
 
 <style lang="scss">
-
 * {
   -webkit-font-smoothing: antialiased;
 }
