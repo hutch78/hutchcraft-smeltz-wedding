@@ -306,7 +306,6 @@
                     <span class="label-text">Number of guests</span>
                     <input
                       type="number"
-                      max="4"
                       name="num_guests"
                       id="rsvp-guests"
                       v-model="form.numGuests"
