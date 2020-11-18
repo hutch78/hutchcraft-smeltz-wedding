@@ -62,12 +62,12 @@
 
     <section class="details-section py-10 px-5">
       <div class="container">
-
         <div class="lg:flex lg:flex-row-reverse">
           <div class="content-col lg:w-1/2 lg:py-16 lg:pl-16">
+            <h2 class="h2-style text-secondary mb-4 lg:mb-10">
+              Wedding Details
+            </h2>
 
-            <h2 class="h2-style text-secondary mb-4 lg:mb-10">Wedding Details</h2>
-            
             <!-- When -->
             <div class="details-row">
               <div class="flex pb-5">
@@ -79,7 +79,9 @@
             <!-- Where -->
             <div class="details-row">
               <div class="flex pb-5">
-                <h3 class="h3-style mb-4 w-24 lg:w-32 flex-shrink-0 leading-tight">
+                <h3
+                  class="h3-style mb-4 w-24 lg:w-32 flex-shrink-0 leading-tight"
+                >
                   Where
                 </h3>
                 <div class="">
@@ -190,43 +192,89 @@
         </h2>
 
         <div class="red-band">
-          <div class="red-band__inner bg-primary p-10 rounded-xl my-10">
+          <div class="red-band__inner bg-primary p-10 rounded-xl my-10 lg:my-20">
             <p class="text-white text-lg">
               “We know this is really short notice, and close to the holidays.
               We would be blessed to have you join us, but understand that COVID
               and the short notice make this a tough ask! Please let us know
-              either way so that we can plan accordingly.“ - Allison and Jeremy
+              either way so that we can plan accordingly.“<span class="lg:block lg:text-right lg:mt-6">- Allison and Jeremy</span>
             </p>
           </div>
         </div>
 
         <div class="px-10">
           <form action="/" netlify>
-            <p class="label-text mb-2">Will you be attending?</p>
-            <div class="flex mb-6">
-              <label for="rsvp-yes" class="inline-block mr-8">
-                <input
-                  class="text-"
-                  type="radio"
-                  id="rsvp-yes"
-                  name="rsvp"
-                  value="yes"
-                />
-                <span class="inline-block ml-2">Yes</span>
-              </label>
-              <label for="rsvp-no" class="inline-block">
-                <input type="radio" id="rsvp-no" name="rsvp" value="no" />
-                <span class="inline-block ml-2">No</span>
-              </label>
-            </div>
             <div class="form-row">
               <label class="block mb-6 md:mb-0" for="rsvp-first-name">
                 <span class="label-text">First Name</span>
-                <input type="text" id="rsvp-first-name" class="form-control" />
+                <input
+                  type="text"
+                  id="rsvp-first-name"
+                  name="first_name"
+                  v-model="form.firstName"
+                  class="form-control"
+                />
               </label>
               <label class="block mb-6 md:mb-0" for="rsvp-last-name">
                 <span class="label-text">Last Name</span>
-                <input type="text" id="rsvp-last-name" class="form-control" />
+                <input
+                  type="text"
+                  id="rsvp-last-name"
+                  name="last_name"
+                  v-model="form.lastName"
+                  class="form-control"
+                />
+              </label>
+            </div>
+
+            <div class="form-row form-row--single-col border border-secondary-200 p-6 rounded-xl">
+              <p class="label-text mb-0">Will you be attending?</p>
+              <div class="flex mb-6 lg:mb-0">
+                <label for="rsvp-yes" class="inline-block mr-8">
+                  <input
+                    type="radio"
+                    id="rsvp-yes"
+                    name="rsvp"
+                    v-model="form.rsvp"
+                    value="yes"
+                  />
+                  <span class="inline-block ml-2">Yes</span>
+                </label>
+                <label for="rsvp-no" class="inline-block">
+                  <input 
+                    type="radio" 
+                    id="rsvp-no" 
+                    name="rsvp" 
+                    v-model="form.rsvp"
+                    value="no" 
+                  />
+                  <span class="inline-block ml-2">No</span>
+                </label>
+              </div>
+            </div>
+            
+            <template v-if="form.rsvp == 'yes'">
+
+              <div class="form-row">
+              <label class="block mb-6 md:mb-0" for="rsvp-email">
+                <span class="label-text">Email</span>
+                <input
+                  type="email"
+                  id="rsvp-email"
+                  name="email"
+                  v-model="form.email"
+                  class="form-control"
+                />
+              </label>
+              <label class="block mb-6 md:mb-0" for="rsvp-phone">
+                <span class="label-text">Phone</span>
+                <input
+                  type="text"
+                  id="rsvp-phone"
+                  name="phone"
+                  v-model="form.phone"
+                  class="form-control"
+                />
               </label>
             </div>
             <div class="form-row">
@@ -235,13 +283,21 @@
                 <input
                   type="number"
                   max="4"
+                  name="num_guests"
                   id="rsvp-guests"
+                  v-model="form.numGuests"
                   class="form-control"
                 />
               </label>
               <label class="block mb-6 md:mb-0" for="rsvp-what-ages">
                 <span class="label-text">What ages are your kids?</span>
-                <input type="text" id="rsvp-what-ages" class="form-control" />
+                <input
+                  type="text"
+                  id="rsvp-what-ages"
+                  name="ages_kids"
+                  v-model="form.agesKids"
+                  class="form-control"
+                />
               </label>
             </div>
             <div class="form-row form-row--single-col">
@@ -249,9 +305,18 @@
                 <span class="label-text"
                   >Do you have any dietary restrictions?</span
                 >
-                <input type="text" id="rsvp-diet" class="form-control" />
+                <input
+                  type="text"
+                  id="rsvp-diet"
+                  name="dietary_restrictions"
+                  v-model="form.dietaryRestrictions"
+                  class="form-control"
+                />
               </label>
             </div>
+              
+            </template>
+            
             <div class="form-row form-row--single-col">
               <label class="block mb-6 md:mb-0" for="rsvp-message">
                 <span class="label-text"
@@ -261,6 +326,8 @@
                   type="text"
                   id="rsvp-message"
                   class="form-control"
+                  name="message"
+                  v-model="form.message"
                   rows="4"
                 ></textarea>
               </label>
@@ -287,7 +354,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data(){
+    return {
+      form: {
+        firstName: '',
+        lastName: '',
+        rsvp: 'no',
+        email: '',
+        phone: '',
+        numGuests: '',
+        agesKids: '',
+        dietaryRestrictions: '',
+        message: '',
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -305,7 +388,7 @@ export default {}
 .h3-style {
   @apply text-lg;
   @media (min-width: theme('screens.lg')) {
-    @apply text-xl;;
+    @apply text-xl;
   }
 }
 
@@ -345,8 +428,7 @@ p {
 .red-band {
   position: relative;
   @apply px-5;
-  @media screen and (min-width: 768px) {
-  }
+
   &:after {
     content: '';
     display: block;
@@ -364,6 +446,9 @@ p {
     position: relative;
     z-index: 5;
     @apply max-w-xl mx-auto;
+    @media (min-width: theme('screens.lg')) {
+      @apply max-w-4xl;
+    }
   }
 }
 
@@ -407,7 +492,7 @@ body {
     @apply grid mb-6;
   }
   &--single-col {
-    @apply grid-cols-1;
+    @apply grid-cols-1 gap-0;
   }
 }
 
