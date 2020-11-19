@@ -281,14 +281,21 @@
               <template v-if="form.rsvp == 'yes'">
                 <div class="form-row">
                   <label class="block mb-6 md:mb-0" for="rsvp-email">
-                    <span class="label-text">Email</span>
+                    <span class="label-text" :class="{ 'text-salmon-800': $v.form.email.$dirty && $v.form.email.$error }">Email</span>
                     <input
                       type="email"
                       id="rsvp-email"
                       name="email"
                       v-model="form.email"
                       class="form-control"
+                      @blur="$v.form.email.$touch()"
+                      :class="{
+                        'er': $v.form.email.$dirty && $v.form.email.$error
+                      }"
                     />
+                    <small class="bg-salmon-500 text-white mt-2 py-3 px-4 text-base rounded-md" :class="$v.form.email.$dirty && $v.form.email.$error ? 'block' : 'hidden'">
+                      Please enter your email address so we can get in touch with any updates as we get closer to the event
+                    </small>
                   </label>
                   <label class="block mb-6 md:mb-0" for="rsvp-phone">
                     <span class="label-text">Phone</span>
@@ -433,7 +440,7 @@
 
 <script>
 import { validationMixin } from 'vuelidate';
-import { required, minLength } from 'vuelidate/lib/validators';
+import { required, minLength, email } from 'vuelidate/lib/validators';
 import { handleSubmit } from '../assets/js/services/form'
 
 export default {
@@ -442,7 +449,8 @@ export default {
   validations: {
     form: {
       firstName: { required },
-      lastName: { required }
+      lastName: { required },
+      email: { required, email },
     }
   },
   
