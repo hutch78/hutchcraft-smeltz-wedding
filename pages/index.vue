@@ -46,7 +46,7 @@
           matron of honor (Miles & Krista Jeffrey) and fell in love at first
           sight. Jeremy and Allison had immediate chemistry, laughing together
           about nerdy things like Lord of the Rings, Game of Thrones, and cheesy
-          reality TV shows, They knew they were onto something special. They
+          reality TV shows. They knew they were onto something special. They
           spoke for hours every day on the phone and texted each other first
           thing in the morning.
         </p>
@@ -197,11 +197,11 @@
             class="red-band__inner bg-primary p-10 rounded-xl my-10 lg:my-20"
           >
             <p class="text-white text-lg font-bold">
-              “We know this is really short notice, and close to the holidays.
+              “ We know this is really short notice, and close to the holidays.
               We would be blessed to have you join us, but understand that COVID
               and the short notice make this a tough ask! Please let us know
-              either way so that we can plan accordingly.“<span
-                class="lg:block lg:text-right lg:mt-6 font-normal italic"
+              either way so that we can plan accordingly. ”<span
+                class="block text-right mt-6 font-normal italic"
                 >- Allison and Jeremy</span
               >
             </p>
