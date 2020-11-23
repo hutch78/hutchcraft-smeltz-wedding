@@ -119,6 +119,18 @@
               </div>
             </div>
 
+            <!-- Bar -->
+            <div class="details-row">
+              <div class="flex">
+                <h3 class="h3-style mb-4 w-24 lg:w-32 flex-shrink-0">Bar 🍻</h3>
+                <div class="">
+                  <p>
+                    There will not be a bar inside the reception, but there is a cash bar right outside in the hotel lobby.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <!-- Rooms -->
             <div class="details-row">
               <div class="flex">
